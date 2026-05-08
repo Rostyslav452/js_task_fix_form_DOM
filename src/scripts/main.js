@@ -1,15 +1,18 @@
 'use strict';
 
-const inputs = [...document.querySelectorAll('input')];
+const inputs = [...document.querySelector('form').querySelectorAll('input')];
 
 inputs.forEach((e) => {
   const label = document.createElement('label');
 
   label.classList.add('field-label');
   label.setAttribute('htmlFor', `${e.id}`);
-  label.textContent = e.name.charAt(0).toUpperCase() + e.name.slice(1);
 
-  e.setAttribute('placeholder', `${e.name}`);
+  const capitalizedName = e.name.charAt(0).toUpperCase() + e.name.slice(1);
+
+  label.textContent = capitalizedName;
+
+  e.setAttribute('placeholder', `${capitalizedName}`);
 
   e.before(label);
 });
