@@ -6,7 +6,7 @@ inputs.forEach((e) => {
   const label = document.createElement('label');
 
   label.classList.add('field-label');
-  label.setAttribute('htmlFor', `${e.id}`);
+  label.setAttribute('for', `${e.id}`);
 
   const capitalizedName = e.name.charAt(0).toUpperCase() + e.name.slice(1);
 
